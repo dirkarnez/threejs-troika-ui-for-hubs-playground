@@ -26,10 +26,9 @@
 			"imports": {
 				"three": "https://dirkarnez.github.io/threejs-for-hubs/three.js-65b5105908f5f135cad25fed07e25f15f3876777/build/three.module.js",
 				"three/addons/": "https://dirkarnez.github.io/threejs-for-hubs/three.js-65b5105908f5f135cad25fed07e25f15f3876777/examples/jsm/",
-				"troika-three-text": "https://dirkarnez.github.io/threejs-for-hubs/troika-three-text.0.45.0.min.js"
+				"troika-three-text": "./troika-three-text.0.45.1.min.js"
 			}
 		}
-		
 	</script>
 </head>
 
@@ -37,10 +36,27 @@
 	
 	<script type="module">
 		import * as THREE from 'three';
+		import { Color, Material, Mesh } from "three";
 		import * as BufferGeometryUtils from 'three/addons/utils/BufferGeometryUtils.js';
 		import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-		//import * as troikaThreeText from "troika-three-text";
-		debugger;
+		// import * as troikaThreeText from "troika-three-text";
+		import { Text as TroikaText } from "troika-three-text";
+//		TroikaText.prototype.isTroikaText = true;
+		import {preloadFont} from 'troika-three-text'
+
+debugger;
+		// preloadFont(
+		// 	{
+		// 		font: './hussar-bold-web-edition-font/misc/HussarBoldWeb-bf92.woff', 
+		// 		characters: 'abcdefghijklmnopqrstuvwxyz'
+		// 	},
+		// 	() => {
+		// 		debugger;
+		// 				// add text
+		// 	}
+		// )
+
+
 		// "troika-three-text": "https://cdn.jsdelivr.net/npm/troika-three-text@0.45.0/+esm"
 
 		// debugger;
@@ -126,20 +142,19 @@
 
 
 
-		// // add text
-		// const myText = new troikaThreeText.Text()
-		// scene.add(myText)
+		const myText = new TroikaText()
+		
+		scene.add(myText)
+		
+		myText.text = 'HELLO, WORLD!';
+		myText.color = 0x000000;
+		myText.fontSize = 2;
+		myText.position.x = 0
+		myText.position.y = 0
+		myText.position.z = 0
 
-		// myText.text = 'HELLO, WORLD!';
-		// myText.color = 0x000000;
-		// myText.fontSize = 2;
-		// myText.position.x = 0
-		// myText.position.y = 0
-		// myText.position.z = 0
-
-		// // Update the rendering:
-		// myText.sync()
-
+		// Update the rendering:
+		myText.sync()
 
 		// Render Loop
 		var render = function () {
