@@ -1,4 +1,4 @@
-[threejs-for-hubs-playground](https://dirkarnez.github.io/threejs-for-hubs-playground)
+[threejs-troika-ui-for-hubs-playground](https://dirkarnez.github.io/threejs-troika-ui-for-hubs-playground)
 ====================================================================
 ### TODOs
 - [ ] Buttons
